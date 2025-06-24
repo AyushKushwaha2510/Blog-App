@@ -1,6 +1,19 @@
 import React from "react";
 import {Button, Input} from "./index";
 import reactLogo from '../assets/react.svg';
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+
+
+// const navigate = useNavigate();
+// const dispatch = useDispatch();
+// const {resgister, handelSubmit} = useForm()
+// const [error, setError] = useState("")
+
+// const login = async(data) =>{
+
+// }
+
 
 function LogIn() {
     return (
@@ -10,9 +23,10 @@ function LogIn() {
                 <h2>Sign in to your account</h2>
                 <p>
                      Don&apos;t have any account?&nbsp;
-                     {/* <Link to="/signup" >
+                     <Link to="/signup"
+                            className="text-blue-200" >
                         Sign Up
-                     </Link> */}
+                     </Link>
                 </p>
             </div>
 
