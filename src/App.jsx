@@ -3,6 +3,7 @@ import './App.css'
 // import LogIn from './components/LogIn'
 import LoginPage from './pages/LoginPage'
 import SignUpPage from './pages/SignUpPage'
+import { PostCard } from './components'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -10,7 +11,9 @@ function App() {
   return (
     <>
       {/* <LoginPage/> */}
-      <SignUpPage/>
+      {/* <SignUpPage/> */}
+      <PostCard/>
+
     </>
   )
 }

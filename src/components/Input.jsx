@@ -10,7 +10,7 @@ const Input = forwardRef(function Input({
 }, ref) {
     const id = useId();
     return (
-        <div className="w-full flex flex-col">
+        <div className="w-full flex flex-col gap-1">
             {
                 label && <label htmlFor={id}
                                 className="ml-1">{label}</label>
