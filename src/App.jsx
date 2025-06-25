@@ -3,7 +3,7 @@ import './index.css'
 // import LogIn from './components/LogIn'
 import LoginPage from './pages/LoginPage'
 import SignUpPage from './pages/SignUpPage'
-import { Header, PostCard } from './components'
+import { Footer, Header, PostCard } from './components'
 import { ThemeProvider } from './contexts/theme'
 import { Outlet } from 'react-router-dom'
 
@@ -31,6 +31,7 @@ function App() {
       <main>
         <Outlet/>
       </main>
+      <Footer/>
       {/* <LoginPage/> */}
       {/* <SignUpPage/> */}
       {/* <PostCard/> */}

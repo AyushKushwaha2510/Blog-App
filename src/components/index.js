@@ -8,6 +8,8 @@ import Container from "./container/Container";
 import ThemeBtn from "./ThemeButton";
 import { ThemeProvider } from "../contexts/theme";
 import AuthLayout from './AuthLayout'
+import Footer from "./Footer/Footer";
+
 export{
     Input,
     LogIn,
@@ -18,6 +20,7 @@ export{
     Container,
     ThemeBtn,
     ThemeProvider,
-    AuthLayout
+    AuthLayout,
+    Footer
     
 }
