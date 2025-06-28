@@ -14,6 +14,9 @@ function Home() {
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis cupiditate rerum ad doloremque nihil esse nemo repellat iste veniam porro!
                 </p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere explicabo, reiciendis quaerat incidunt hic voluptas inventore porro accusamus deleniti nostrum soluta dicta minima aliquid id maiores unde asperiores illo! Iure debitis, quibusdam accusantium soluta neque exercitationem dicta autem porro corrupti distinctio assumenda nobis, deserunt amet, atque illum saepe aperiam. Ea perferendis tenetur consequuntur minima. Quisquam facilis atque maxime sit vel voluptates, quis temporibus, eligendi cumque autem expedita dolor quae minima iste? Expedita, ex, officia doloribus fugiat similique architecto sequi pariatur quia corporis praesentium dolorem natus, vitae possimus tempora maxime cupiditate cumque iste doloremque! Odio nihil repudiandae cum beatae minus quis.
+
+
+                <p>INTEGRATE GEMINI FOR BLOG WRITING</p>
             </Container>
         </div>
     )

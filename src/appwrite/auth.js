@@ -39,9 +39,11 @@ export class AuthService {
 
     async getCurrentUser(){
         try {
-            return await this.account.get(email, password);
+            console.log("Session already exists, skipping login.");
+            return await this.account.get();
         } catch (error) {
             console.log(error);
+            console.log("No active session or failed to fetch user:", error);
         }
 
         return null;

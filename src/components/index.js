@@ -9,6 +9,8 @@ import ThemeBtn from "./ThemeButton";
 import { ThemeProvider } from "../contexts/theme";
 import AuthLayout from './AuthLayout'
 import Footer from "./Footer/Footer";
+import Select from "./Select";
+import PostForm from "./PostForm/PostForm";
 
 export{
     Input,
@@ -21,6 +23,8 @@ export{
     ThemeBtn,
     ThemeProvider,
     AuthLayout,
-    Footer
+    Footer,
+    Select,
+    PostForm,
     
 }

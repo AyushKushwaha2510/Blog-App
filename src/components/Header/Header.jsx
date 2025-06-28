@@ -6,10 +6,13 @@ import ReactLogo from '/src/assets/react.svg';
 import ThemeBtn from "../ThemeButton";
 import { ThemeProvider } from "../../contexts/theme";
 import { NavLink } from "react-router-dom";
+import LogoutBtn from "./LogoutBtn";
 
 
 function Header() {
     const authStatus = useSelector((state) => state.auth.status)
+    console.log("Auth Status:", authStatus); // should log `true` after login
+    
     const navigate = useNavigate()
 
     const navItems = [
@@ -70,7 +73,7 @@ function Header() {
                                         className={({ isActive }) =>
                                             `w-15 h-8 md:w-25 md:h-10 flex items-center justify-center text-sm md:text-[14px]  shadow-sm shadow-cyan-300 p-2 px-4 rounded-xl hover:cursor-pointer 
                                             hover:scale-105 duration-500
-                                            ${isActive ? "text-cyan-300":"null"}`
+                                            ${isActive ? "text-cyan-300" : "null"}`
                                         }
                                     >
                                         {item.name}
@@ -78,6 +81,23 @@ function Header() {
                                 </li>
                             ) : null)
                         }
+                        {authStatus && (
+                            <li >
+                                <NavLink 
+                                to="/login"
+                                className={({ isActive }) =>
+                                            `w-15 h-8 md:w-25 md:h-10 flex items-center justify-center text-sm md:text-[14px]  shadow-sm shadow-cyan-300 p-2 px-4 rounded-xl hover:cursor-pointer 
+                                            hover:scale-105 duration-500
+                                            ${isActive ? "text-cyan-300" : "null"}`
+                                        }>
+
+                                <LogoutBtn />
+                                </NavLink>
+                            </li>
+                        )}
+                         
+                        
+                        
                     </ul>
                     <ThemeBtn />
                 </nav>
