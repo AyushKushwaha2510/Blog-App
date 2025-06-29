@@ -8,9 +8,11 @@ import { AuthLayout } from "./components";
 import LoginPage from "./pages/LoginPage";
 import SignUpPage from "./pages/SignUpPage";
 import Home from "./pages/Home";
-import PostForm from "./components/PostForm/PostForm";
+// import PostForm from "./components/PostForm/PostForm";
 import AllPosts from "./pages/AllPosts";
 import AddPost from "./pages/AddPost";
+import EditPost from "./pages/EditPost";
+import Post from "./pages/Post";
 
 const router = createBrowserRouter([
   {
@@ -38,10 +40,10 @@ const router = createBrowserRouter([
         )
       },
       {
-        path: "/all-posts",
+        path: '/all-posts',
         element: (
           <AuthLayout authentication>
-            {" "} 
+            {" "}
             <AllPosts />
           </AuthLayout>
         ),
@@ -51,9 +53,22 @@ const router = createBrowserRouter([
         element: (
           <AuthLayout authentication>
             {" "}
-            <AddPost/>
+            <AddPost />
           </AuthLayout>
         ),
+      },
+      {
+        path: "/edit-post/:slug",
+        element: (
+          <AuthLayout authentication>
+            {" "}
+            <EditPost />
+          </AuthLayout>
+        ),
+      },
+      {
+        path: "/post/:slug",
+        element: <Post />,
       },
     ]
   }

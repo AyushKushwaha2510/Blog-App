@@ -37,8 +37,8 @@ function Header() {
             active: authStatus,
         },
         {
-            name: "Add Posts",
-            path: '/add-posts',
+            name: "Add Post",
+            path: '/add-post',
             active: authStatus,
         },
     ]

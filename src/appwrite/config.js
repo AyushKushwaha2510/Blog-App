@@ -21,7 +21,7 @@ export class Service {
                 conf.appwriteDatabaseId,
                 conf.appwriteCollectionId,
                 slug,
-                ID.unique(),
+                // ID.unique(),
                 {
                     title,
                     content,
@@ -127,6 +127,7 @@ export class Service {
             fileId
         )
     }
+    
 
 
 }
