@@ -1,8 +1,21 @@
 import React from "react";
 import { Container } from "../components";
+import AskGemini from "../components/AskGemini";
 
 
 function Home() {
+    //     const askGemini = async () => {
+    //   const response = await fetch('http://localhost:5174/api/ask', {
+    //     method: 'POST',
+    //     headers: {
+    //       'Content-Type': 'application/json'
+    //     },
+    //     body: JSON.stringify({ prompt: "Write a poem about the stars." })
+    //   });
+
+    //   const data = await response.json();
+    //   console.log(data.reply);
+    // };
     return (
         <div className="w=full max-h-max bg-cyan-000 dark:bg-cyan-950 py-4 dark:text-white text-center px-5" >
             <Container className="shadow-sm shadow-cyan-300 flex flex-col justify-center gap-20" >
@@ -17,6 +30,9 @@ function Home() {
 
 
                 <p>INTEGRATE GEMINI FOR BLOG WRITING</p>
+                
+                <AskGemini />
+
             </Container>
         </div>
     )

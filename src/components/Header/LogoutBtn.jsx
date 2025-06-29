@@ -15,7 +15,7 @@ function LogoutBtn({className}) {
     }
   return (
     <button
-    className={className}
+    className={`hover:cursor-pointerZ ${className}`}
     onClick={logoutHandler}
     >Logout</button>
   )
