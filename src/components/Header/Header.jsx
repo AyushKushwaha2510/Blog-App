@@ -45,7 +45,7 @@ function Header() {
 
     return (
 
-        <header className={` bg-[#c3d3f127] dark:bg-[#212121] dark:text-amber-50`}>
+        <header className={` bg-[#c3d3f127] dark:bg-[#111111] dark:text-amber-50`}>
             <Container>
                 <nav className="flex p-2" >
                     <div className="flex">

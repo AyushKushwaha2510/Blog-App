@@ -147,9 +147,10 @@ import { Button, Input, Select } from "../index";
 import appwriteService from "../../appwrite/config";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import AskGemini from "../AskGemini";
 
 export default function PostForm({ post }) {
-    const { register, handleSubmit, watch, setValue} = useForm({
+    const { register, handleSubmit, watch, setValue } = useForm({
         defaultValues: {
             title: post?.title || "",
             slug: post?.$id || "",
@@ -177,7 +178,8 @@ export default function PostForm({ post }) {
             if (dbPost) {
                 navigate(`/post/${dbPost.$id}`);
             }
-        } else {
+        }
+        else {
             const file = await appwriteService.uploadFile(data.image[0]);
 
             if (file) {
@@ -214,8 +216,8 @@ export default function PostForm({ post }) {
     }, [watch, slugTransform, setValue]);
 
     return (
-        <form onSubmit={handleSubmit(submit)} className="flex flex-wrap">
-            <div className="w-2/3 px-2">
+        <form onSubmit={handleSubmit(submit)} className="flex flex-col md:flex-row mx-auto w-max lg:gap-50">
+            <div className=" px-2">
                 <Input
                     label="Title :"
                     placeholder="Title"
@@ -231,17 +233,23 @@ export default function PostForm({ post }) {
                         setValue("slug", slugTransform(e.currentTarget.value), { shouldValidate: true });
                     }}
                 />
-                <label htmlFor="content">Content</label>
-                <textarea
-                    {...register("content", { required: true })} 
-                    name="content" 
-                    id="content" 
-                    className="bg-[#f9f9fa20] h-6 w-70 py-2 px-1 border border-[#e7f3ff6a] rounded-md shadow-md"></textarea>
+                <br />
+                <div className="flex flex-col gap-2 ">
+                    <label htmlFor="content">Content :</label>
+                    <AskGemini/>
+                    <textarea
+                        {...register("content", { required: true })}
+                        name="content"
+                        id="content"
+                        placeholder="paste from gemini or write here"
+                        className="min-height-50 bg-[#f9f9fa20] w-70 py-2 px-1 border dark:border-[#e7f3ff6a] border-[#61616150] rounded-md shadow-md"></textarea>
+                </div>
                 {/* <RTE label="Content :" name="content" control={control} defaultValue={getValues("content")} /> */}
             </div>
-            <div className="w-1/3 px-2">
+            <div className="w-1/3 px-2 flex flex-col">
                 <Input
-                    label="Featured Image :"
+
+                    label="Upload Image :"
                     type="file"
                     className="mb-4"
                     accept="image/png, image/jpg, image/jpeg, image/gif"

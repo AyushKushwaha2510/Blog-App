@@ -10,6 +10,7 @@ import { Outlet } from 'react-router-dom'
 import authService from './appwrite/auth'
 import { useDispatch } from 'react-redux'
 import { login } from './store/authSlice'
+import ScrollToTop from './functionalities/ScrollToTop'
 
 function App() {
   const [themeMode, setThemeMode] = useState("light")
@@ -42,17 +43,21 @@ function App() {
   }, []);
 
   return (
-    <ThemeProvider value={{ themeMode, lightTheme, darkTheme }}>
-      <Header />
-      <main>
-        <Outlet />
-      </main>
-      <Footer />
-      {/* <LoginPage/> */}
-      {/* <SignUpPage/> */}
-      {/* <PostCard/> */}
+    <>
+      <ScrollToTop />
+      <ThemeProvider value={{ themeMode, lightTheme, darkTheme }}>
+        <Header />
+        <main>
+          <Outlet />
+        </main>
+        <Footer />
+        {/* <LoginPage/> */}
+        {/* <SignUpPage/> */}
+        {/* <PostCard/> */}
 
-    </ThemeProvider>
+      </ThemeProvider>
+    </>
+
   )
 
 }

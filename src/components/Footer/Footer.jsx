@@ -1,55 +1,98 @@
 import React from 'react'
-import { Link, Links, NavLink } from 'react-router-dom'
+import { useSelector } from 'react-redux';
+import { Link, Links, NavLink, useNavigate } from 'react-router-dom'
+import LogoutBtn from './LogoutBtn';
 
 function Footer() {
+    const authStatus = useSelector((state) => state.auth.status)
+    console.log("Auth Status:", authStatus); // should log `true` after login
+
+    const navigate = useNavigate()
+
+    const navItems = [
+        {
+            name: "Home",
+            path: '/',
+            active: true,
+        },
+        {
+            name: "Login",
+            path: '/login',
+            active: !authStatus,
+        },
+        {
+            name: "Signup",
+            path: '/signup',
+            active: !authStatus,
+        },
+        {
+            name: "All Posts",
+            path: '/all-posts',
+            active: authStatus,
+        },
+        {
+            name: "Add Post",
+            path: '/add-post',
+            active: authStatus,
+        },
+    ]
+
     return (
         <footer className='w-[100%] h-max md:h-max bg-[#212121] flex-col justify-center text-[#f5f5f5] py-5'>
             <div className='justify-center max-w-[1500px] mx-auto px-1 md:px-2'>
                 <div className='flex justify-between items-center p-2 mb-5 md:p-0 md:py-2'>
                     <h1 className='text-[22px] md:text-3xl'>Let's Connect There</h1>
-                    <button className='border rounded-2xl p-1 px-2'>Hire Me</button>
+                    {/* <button className='border rounded-2xl p-1 px-2'>Hire Me</button> */}
                 </div>
                 <hr className='my-5 mx-2 md:mx-0 border-t-2 border-[#6c615b6b]' />
                 <div className=' flex flex-wrap gap-6 md:flex-row justify-between px-2 md:px-0'>
                     <div className=' max-w-2xl'>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum laboriosam ad consequuntur aspernatur ab exercitationem aut totam ut? Magnam, impedit.
                     </div>
-                    <div className='flex flex-col gap-1.5'>
+                    <div className='flex flex-col'>
                         <h4 className='text-[#fd853a] mb-2 md:mb-4 md:text-xl'>Navigation</h4>
-                        <span>
-                            <NavLink to='/' className={({ isActive }) =>
-                                `${isActive ? "text-orange-300 shadow-md" : "text-white"}`
-                            }>
-                                Home
-                            </NavLink>
-                        </span>
-                        <span>
-                            <NavLink to='/aboutMe' className={({ isActive }) =>
-                                `${isActive ? "text-orange-300 shadow-md" : "text-white"}`
-                            }>
-                                AboutMe
-                            </NavLink>
-                        </span>
-                        <span>
-                            <NavLink to='/projects' className={({ isActive }) =>
-                                `${isActive ? "text-orange-300 shadow-md" : "text-white"}`
-                            }>
-                                Projects
-                            </NavLink>
-                        </span>
-                        {/* <span>
-                            <NavLink to='/resume' className={({ isActive }) =>
-                                `${isActive ? "text-orange-400 shadow-md" : "text-white"}`
-                            }>
-                                Resume
-                            </NavLink>
-                        </span> */}
+                        <ul className="flex flex-col ml-auto gap-3 items-center mr-5">
+                            {              
+                                navItems.map((item) => item.active ? (
+                                    <li key={item.name}>
+                                        <NavLink
+                                            to={item.path}
+                                            className={({ isActive }) =>
+                                                `flex flex-col  hover:cursor-pointer 
+                                            hover:scale-105 duration-500
+                                            ${isActive ? "text-cyan-300" : "null"}`
+                                            }
+                                        >
+                                            {item.name}
+                                        </NavLink>
+                                    </li>
+                                ) : null)
+                            }
+                            {authStatus && (
+                                <li >
+                                    <NavLink
+                                        to="/login"
+                                        className={({ isActive }) =>
+                                            ` flex flex-col items-center justify-center hover:cursor-pointer 
+                                            hover:scale-105 duration-500
+                                            ${isActive ? "text-cyan-300" : "null"}`
+                                        }>
+
+                                        <LogoutBtn />
+                                    </NavLink>
+                                </li>
+                            )}
+
+
+
+                        </ul>
                     </div>
+
                     <div className='flex flex-col gap-1.5'>
                         <h4 className='text-[#fd853a] mb-2 md:mb-4 md:text-xl'>Contacts</h4>
                         <span>+91 78345xxxxx</span>
                         <span>xyz@abc.com</span>
-                        <span>www.portfolio.com</span>
+                        <a href='https://ayushkushwaha-portfolio.netlify.app/' target='_blank'>www.portfolio.com</a>
                     </div>
                     <div className='flex flex-col'>
                         <label htmlFor="" className='text-[#fd853a] mb-2 md:mb-4 md:text-xl'>Get the latest information</label>

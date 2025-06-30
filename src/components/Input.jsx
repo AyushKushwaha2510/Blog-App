@@ -16,7 +16,7 @@ const Input = forwardRef(function Input({
                                 className="ml-1">{label}</label>
             }
             <input type={type} id={id} ref={ref} {...props} 
-                   className={`${className} bg-[#f9f9fa20] h-6 w-70 py-2 px-1 border border-[#e7f3ff6a] rounded-md shadow-md`}/>
+                   className={`${className} bg-[#f9f9fa20] h-8 w-70 py-2 px-1 border dark:border-[#e7f3ff6a] border-[#61616150] rounded-md shadow-md `}/>
         </div>
     )
 

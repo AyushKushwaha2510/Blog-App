@@ -9,7 +9,7 @@ import LoginPage from "./pages/LoginPage";
 import SignUpPage from "./pages/SignUpPage";
 import Home from "./pages/Home";
 // import PostForm from "./components/PostForm/PostForm";
-import AllPosts from "./pages/AllPosts";
+import AllPosts, { postLoader } from "./pages/AllPosts";
 import AddPost from "./pages/AddPost";
 import EditPost from "./pages/EditPost";
 import Post from "./pages/Post";
@@ -40,6 +40,7 @@ const router = createBrowserRouter([
         )
       },
       {
+        loader:postLoader,
         path: '/all-posts',
         element: (
           <AuthLayout authentication>
