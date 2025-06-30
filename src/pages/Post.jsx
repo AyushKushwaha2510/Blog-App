@@ -32,6 +32,10 @@ export default function Post() {
         });
     };
 
+    useEffect(() => {
+        document.title = "Post";
+    }, []);
+
     return post ? (
         <div className="py-8">
             <Container>

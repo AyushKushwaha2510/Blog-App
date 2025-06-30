@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import Button from "./Button";
-
+import conf from "../conf/conf";
 // Load API key from .env
-const API_KEY = "AIzaSyBY-4_HsFEvI5kPjOMH7kcQTHgNOombgWk";
+const API_KEY = conf.geminiApiKey;
 
 function AskGemini() {
   const [prompt, setPrompt] = useState("");

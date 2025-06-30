@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Container } from "../components";
 import AskGemini from "../components/AskGemini";
 
@@ -16,6 +16,11 @@ function Home() {
     //   const data = await response.json();
     //   console.log(data.reply);
     // };
+
+    useEffect(() => {
+        document.title = "BlogApp | Home";
+    }, []);
+
     return (
         <div className="w=full max-h-max bg-cyan-000 dark:bg-[#212121] py-4 dark:text-white text-center px-5" >
             <Container className="shadow-sm shadow-cyan-300 flex flex-col justify-center gap-20 py-2" >

@@ -15,6 +15,10 @@ function AllPosts() {
     //     })
     // }, [])
 
+    useEffect(() => {
+        document.title = "All Posts";
+    }, []);
+
     return (
         <div className=' py-8 flex justify-center dark:bg-[#212121] '>
             <Container className=" dark:bg-[#313131] shadow-sm  shadow-cyan-300 ">

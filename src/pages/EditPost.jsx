@@ -19,6 +19,11 @@ function EditPost() {
             navigate('/')
         }
     }, [slug, navigate])
+
+    useEffect(() => {
+        document.title = "Edit Post";
+    }, []);
+
   return post ? (
     <div className='py-8'>
         <Container>
