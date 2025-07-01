@@ -38,7 +38,7 @@ function Footer() {
     ]
 
     return (
-        <footer className='w-[100%] h-max md:h-max bg-[#212121] flex-col justify-center text-[#f5f5f5] py-5'>
+        <footer className='w-[100%] h-max md:h-max bg-[#111111] flex-col justify-center text-[#f5f5f5] py-5'>
             <div className='justify-center max-w-[1500px] mx-auto px-1 md:px-2'>
                 <div className='flex justify-between items-center p-2 mb-5 md:p-0 md:py-2'>
                     <h1 className='text-[22px] md:text-3xl'>Let's Connect There</h1>
@@ -47,8 +47,8 @@ function Footer() {
                 <hr className='my-5 mx-2 md:mx-0 border-t-2 border-[#6c615b6b]' />
                 <div className=' flex flex-wrap gap-6 md:flex-row justify-between px-2 md:px-0'>
                     <div className=' max-w-2xl'>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum laboriosam ad consequuntur aspernatur ab exercitationem aut totam ut? Magnam, impedit.
-                    </div>
+                        Whether you're here to write, read, or get inspired, you're always welcome.
+                        No clutter. Just pure content creation — with a touch of AI.                    </div>
                     <div className='flex flex-col'>
                         <h4 className='text-[#fd853a] mb-2 md:mb-4 md:text-xl'>Navigation</h4>
                         <ul className="flex flex-col ml-auto gap-3 items-center mr-5">
@@ -60,7 +60,7 @@ function Footer() {
                                             className={({ isActive }) =>
                                                 `flex flex-col  hover:cursor-pointer 
                                             hover:scale-105 duration-500
-                                            ${isActive ? "text-cyan-300" : "null"}`
+                                            ${isActive ? "text-orange-400 font-bold font-stretch-54%" : "null"}`
                                             }
                                         >
                                             {item.name}
@@ -75,7 +75,7 @@ function Footer() {
                                         className={({ isActive }) =>
                                             ` flex flex-col items-center justify-center hover:cursor-pointer 
                                             hover:scale-105 duration-500
-                                            ${isActive ? "text-cyan-300" : "null"}`
+                                            ${isActive ? "text-orange-400 font-bold font-stretch-54%" : "null"}`
                                         }>
 
                                         <LogoutBtn />

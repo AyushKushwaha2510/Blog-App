@@ -55,7 +55,7 @@ export default function Post() {
     }, []);
 
     return post ? (
-        <div className="py-8">
+        <div className="py-8 dark:bg-[#212121] dark:text-white ">
             <Container>
                 <div className="w-full flex flex-col justify-center mb-4 border rounded-xl p-2">
                     {console.log("you are in div.jsx , preview URL is " , previewUrl)}

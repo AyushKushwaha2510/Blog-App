@@ -102,6 +102,7 @@ import { useDispatch } from "react-redux";
 import { useForm } from "react-hook-form";
 import { login as authLogin } from '../store/authSlice'
 import service from "../appwrite/auth";
+import Logo from "./Logo";
 
 
 function LogIn() {
@@ -116,7 +117,7 @@ function LogIn() {
             const session = await service.login(data)
             if (session) {
                 const userData = await service.getCurrentUser()
-                if (userData) dispatch(authLogin({userData}));
+                if (userData) dispatch(authLogin({ userData }));
                 navigate("/all-posts")
             }
         } catch (error) {
@@ -126,19 +127,20 @@ function LogIn() {
 
 
     return (
-        <div className="text-white w-max mx-auto h-max p-10 gap-5 justify-center flex flex-col rounded-2xl border-[0.5px] border-[#e7f3ff6a]  bg-[rgba(255,255,255,0.07)] shadow-[2px_4px_4px_5px_rgba(0,0,0,0.25)] backdrop-blur-[23.6px]">
-            <div className="flex flex-col text-center gap-1">
-                <img src={reactLogo} alt="React Logo" className="mx-auto" />
+        <div className="text-black dark:text-white w-max mx-auto h-max p-10 gap-5 justify-center flex flex-col rounded-2xl border-[0.5px] border-[#e7f3ff6a]  bg-[rgba(255,255,255,0.07)] shadow-[2px_4px_4px_5px_rgba(0,0,0,0.25)] backdrop-blur-[23.6px]  ">
+            <div className="flex flex-col text-center gap-1 ">
+
+                <div className="w-10 mx-auto mb-5"><Logo /></div>
                 <h2>Sign in to your account</h2>
                 <p>
                     Don&apos;t have any account?&nbsp;
-                    <Link to="/signup" className="text-blue-200">
+                    <Link to="/signup" className= "text-orange-700 dark:text-orange-400">
                         Sign Up
                     </Link>
                 </p>
             </div>
 
-                {error && <p className="text-red-600 mt-8 text-center">{error}</p>}
+            {error && <p className="text-red-600 mt-8 text-center">{error}</p>}
 
             {/* Login Form */}
             <form onSubmit={handleSubmit(login)} className="flex flex-col gap-5">

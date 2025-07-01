@@ -7,6 +7,7 @@ import ThemeBtn from "../ThemeButton";
 import { ThemeProvider } from "../../contexts/theme";
 import { NavLink } from "react-router-dom";
 import LogoutBtn from "./LogoutBtn";
+import Logo from "../Logo";
 
 
 function Header() {
@@ -45,12 +46,12 @@ function Header() {
 
     return (
 
-        <header className={` bg-[#c3d3f127] dark:bg-[#111111] dark:text-amber-50`}>
+        <header className={` bg-[#efb38827] dark:bg-[#111111] dark:text-amber-50`}>
             <Container>
                 <nav className="flex p-2" >
-                    <div className="flex">
-                        {/* LOGO */}
-                        <img src={ReactLogo} alt="" />
+                    <div className="flex justify-center items-center">
+                        <Logo className="w-10" />
+                        
                     </div>
                     <ul className="flex flex-row ml-auto gap-1.5 md:gap-10 items-center mr-5 my-2">
                         {
@@ -71,9 +72,9 @@ function Header() {
                                     <NavLink
                                         to={item.path}
                                         className={({ isActive }) =>
-                                            `w-15 h-8 md:w-25 md:h-10 flex items-center justify-center text-sm md:text-[14px]  shadow-sm shadow-cyan-300 p-2 px-4 rounded-xl hover:cursor-pointer 
+                                            `w-15 h-8 md:w-25 md:h-10 flex items-center justify-center text-sm md:text-[14px]  shadow-sm shadow-orange-400 p-2 px-4 rounded-xl hover:cursor-pointer 
                                             hover:scale-105 duration-500
-                                            ${isActive ? "text-cyan-300" : "null"}`
+                                            ${isActive ? "text-orange-400 font-bold font-stretch-54%" : "null"}`
                                         }
                                     >
                                         {item.name}
@@ -86,9 +87,9 @@ function Header() {
                                 <NavLink 
                                 to="/login"
                                 className={({ isActive }) =>
-                                            `w-15 h-8 md:w-25 md:h-10 flex items-center justify-center text-sm md:text-[14px]  shadow-sm shadow-cyan-300 p-2 px-4 rounded-xl hover:cursor-pointer 
+                                            `w-15 h-8 md:w-25 md:h-10 flex items-center justify-center text-sm md:text-[14px]  shadow-sm shadow-orange-400 p-2 px-4 rounded-xl hover:cursor-pointer 
                                             hover:scale-105 duration-500
-                                            ${isActive ? "text-cyan-300" : "null"}`
+                                            ${isActive ? "text-orange-400 font-bold" : "null"}`
                                         }>
 
                                 <LogoutBtn />

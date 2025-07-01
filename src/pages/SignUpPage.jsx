@@ -6,7 +6,7 @@ function SignUpPage() {
         document.title = "BlogApp | SignIn";
     }, []);
     return (
-        <div className="bg-blue-500 w-full h-screen flex justify-center items-center bg-[radial-gradient(83%_29.5%_at_50%_70.5%,_#085BB4_0%,_#074A91_27.88%,_#052649_100%)]">
+        <div className="w-full h-screen flex justify-center items-center bg-[radial-gradient(62.61%_55.16%_at_38.22%_53.31%,_#F7E0C2_0%,_#F3CD6D_36.33%,_#EF9217_100%)] dark:bg-[radial-gradient(60.42%_54.69%_at_40.97%_58.15%,_#FF9100_0%,_#704905_51.79%,_#000000_100%)]">
             <SignUp />
         </div>
     );

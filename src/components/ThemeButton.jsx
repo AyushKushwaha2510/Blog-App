@@ -70,12 +70,12 @@ const ThemeToggle = () => {
                 className="w-10 h-10 flex items-center justify-center 
            bg-white/80 dark:bg-white/10 
            backdrop-blur-md 
-           shadow-md hover:shadow-cyan-300 
+           shadow-md dark:hover:shadow-cyan-300 hover:shadow-orange-400
            peer-focus:outline-none 
            transition-all duration-300 
            rounded-full 
-           text-yellow-400 dark:text-blue-300 
-           hover:scale-105 dark:shadow-cyan-300 dark:shadow-sm"
+           text-orange-400  dark:text-blue-300 
+           hover:scale-105 dark:shadow-sm"
             >
                 {theme === "light" ? <FaSun /> : <FaMoon />}
             </div>
