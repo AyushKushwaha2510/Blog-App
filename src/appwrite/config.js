@@ -102,7 +102,7 @@ export class Service {
             return await this.bucket.createFile(
                 conf.appwriteBucketId,
                 ID.unique(),
-                [Permission.read(Role.any())],
+                // [Permission.read(Role.any())],
                 file
             )
         } catch (error) {
