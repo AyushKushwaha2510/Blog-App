@@ -191,6 +191,8 @@ export default function PostForm({ post }) {
                     navigate(`/post/${dbPost.$id}`);
                 }
             }
+            console.log("FEATURED IMAGE", data.featuredImage);
+
         }
     };
 
@@ -236,7 +238,7 @@ export default function PostForm({ post }) {
                 <br />
                 <div className="flex flex-col gap-2 ">
                     <label htmlFor="content">Content :</label>
-                    <AskGemini/>
+                    <AskGemini />
                     <textarea
                         {...register("content", { required: true })}
                         name="content"

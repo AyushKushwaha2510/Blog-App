@@ -121,13 +121,27 @@ export class Service {
         }
     }
 
+    // getFilePreview(fileId) {
+    //     return this.bucket.getFilePreview(
+    //         conf.appwriteBucketId,
+    //         fileId
+    //     ).href
+    // }
+
     getFilePreview(fileId) {
-        return this.bucket.getFilePreview(
-            conf.appwriteBucketId,
-            fileId
-        )
+        if (!fileId || typeof fileId !== "string") {
+            console.warn("⚠️ getFilePreview called with invalid fileId:", fileId);
+            return null;
+        }
+
+        try {
+            return this.bucket.getFilePreview(conf.appwriteBucketId, fileId).href;
+        } catch (error) {
+            console.error("Appwrite :: getFilePreview error", error);
+            return null;
+        }
     }
-    
+
 
 
 }

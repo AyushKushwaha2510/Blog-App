@@ -22,7 +22,7 @@ function SignUp() {
             if (userData) {
                 const userData = await authService.getCurrentUser()
                 if(userData) dispatch(login(userData));
-                navigate("/")
+                navigate("/all-posts")
             }
         } catch (error) {
             setError(error.message)

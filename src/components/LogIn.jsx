@@ -117,7 +117,7 @@ function LogIn() {
             if (session) {
                 const userData = await service.getCurrentUser()
                 if (userData) dispatch(authLogin({userData}));
-                navigate("/")
+                navigate("/all-posts")
             }
         } catch (error) {
             setError(error.message)

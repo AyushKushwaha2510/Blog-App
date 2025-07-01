@@ -13,12 +13,15 @@ export default function Post() {
     const userData = useSelector((state) => state.auth.userData);
 
     const isAuthor = post && userData ? post.userId === userData.$id : false;
+    
+    let previewUrl = null
 
     useEffect(() => {
         if (slug) {
             appwriteService.getPost(slug).then((post) => {
                 if (post) setPost(post);
                 else navigate("/");
+                previewUrl = appwriteService.getFilePreview(post.featuredImage);
             });
         } else navigate("/");
     }, [slug, navigate]);
@@ -41,7 +44,7 @@ export default function Post() {
             <Container>
                 <div className="w-full flex flex-col justify-center mb-4 border rounded-xl p-2">
                     <img
-                        src={appwriteService.getFilePreview(post.featuredImage)}
+                        src={previewUrl}
                         alt={post.title}
                         className="rounded-xl mx-auto"
                     />
