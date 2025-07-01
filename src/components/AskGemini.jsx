@@ -4,7 +4,6 @@ import Button from "./Button";
 import conf from "../conf/conf";
 // Load API key from .env
 const API_KEY = conf.geminiApiKey;
-console.log("API KEY = ", API_KEY);
 
 function AskGemini() {
   const [prompt, setPrompt] = useState("");

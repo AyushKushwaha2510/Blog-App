@@ -102,10 +102,13 @@ export class Service {
             return await this.bucket.createFile(
                 conf.appwriteBucketId,
                 ID.unique(),
+                [Permission.read(Role.any())],
                 file
             )
         } catch (error) {
-            console.log(error);
+            console.error("Appwrite upload error:", error);
+            return null; // <-- add this!
+
         }
     }
     async deleteFile(fileId) {
@@ -121,26 +124,26 @@ export class Service {
         }
     }
 
-    // getFilePreview(fileId) {
-    //     return this.bucket.getFilePreview(
-    //         conf.appwriteBucketId,
-    //         fileId
-    //     ).href
-    // }
-
     getFilePreview(fileId) {
-        if (!fileId || typeof fileId !== "string") {
-            console.warn("⚠️ getFilePreview called with invalid fileId:", fileId);
-            return null;
-        }
-
-        try {
-            return this.bucket.getFilePreview(conf.appwriteBucketId, fileId).href;
-        } catch (error) {
-            console.error("Appwrite :: getFilePreview error", error);
-            return null;
-        }
+        return this.bucket.getFileView( // earlier I was using getFilePreview which is paid feature of appwrite
+            conf.appwriteBucketId,
+            fileId
+        )
     }
+
+    // getFilePreview(fileId) {
+    //     if (!fileId || typeof fileId !== "string") {
+    //         console.warn("⚠️ getFilePreview called with invalid fileId:", fileId);
+    //         return null;
+    //     }
+
+    //     try {
+    //         return this.bucket.getFilePreview(conf.appwriteBucketId, fileId);
+    //     } catch (error) {
+    //         console.error("Appwrite :: getFilePreview error", error);
+    //         return null;
+    //     }
+    // }
 
 
 
