@@ -52,7 +52,7 @@ function Footer() {
                     <div className='flex flex-col'>
                         <h4 className='text-[#fd853a] mb-2 md:mb-4 md:text-xl'>Navigation</h4>
                         <ul className="flex flex-col ml-auto gap-3 items-center mr-5">
-                            {              
+                            {
                                 navItems.map((item) => item.active ? (
                                     <li key={item.name}>
                                         <NavLink
@@ -137,10 +137,18 @@ function Footer() {
                     </div>
                 </div>
                 <hr className="my-5 mx-2 md:mx-0 border-t-2 border-[#6c615b6b]" />
-                <div className='flex flex-wrap justify-center md:justify-between text-sm text-[#9f9d9d9d] gap-2 '>
-                    <span>Copyright© 2025 Portfolio. All Rights Reserved.</span>
-                    <span>User Terms & Conditions | Privacy Policy</span>
+                <div>
+                    <div className='flex flex-wrap justify-center md:justify-between text-sm text-[#9f9d9d9d] gap-2 '>
+                        <span>Copyright© 2025 Portfolio. All Rights Reserved.</span>
+                        <span>User Terms & Conditions | Privacy Policy</span>
+                    </div>
+                    <br />
+                    <div className='mx-auto w-max text-[#9f9d9dcf]'>
+                        <span>Developed by | Ayush Kumar Kushwaha</span>
+                    </div>
                 </div>
+
+
             </div>
 
 
