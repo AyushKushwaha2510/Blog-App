@@ -32,7 +32,7 @@ function SignUp() {
     return (
         <div className="text-black dark:text-white w-max mx-auto h-max p-10 gap-5 justify-center flex flex-col rounded-2xl border-[0.5px] border-[#e7f3ff6a]  bg-[rgba(255,255,255,0.07)] shadow-[2px_4px_4px_5px_rgba(0,0,0,0.25)] backdrop-blur-[23.6px]">
             <div className="flex flex-col text-center gap-1">
-                <div className="w-10 mx-auto mb-5"><Logo /></div>                <h2>Create your Blog Account</h2>
+                <div className=" mx-auto mb-5"><Logo /></div>                <h2>Create your Blog Account</h2>
                 <p>
                     Already have an account?&nbsp;
                     <Link to="/login" className="text-orange-700 dark:text-orange-400">

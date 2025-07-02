@@ -60,7 +60,7 @@ export default function Post() {
                 <div className="w-full flex flex-col justify-center mb-4 border rounded-xl p-2">
                     {console.log("you are in div.jsx , preview URL is " , previewUrl)}
                     {previewUrl ? (
-                        <img src={previewUrl} alt={post?.title} className="rounded-xl mx-auto" />
+                        <img src={previewUrl} alt={post?.title} className="rounded-xl mx-auto max-w-100" />
                     ) : (
                         <p className="text-center">Loading image...</p>
                     )}
@@ -73,13 +73,13 @@ export default function Post() {
                 </div>
                 <div>
                     {isAuthor && (
-                        <div className="mx-auto mt-2 w-max">
+                        <div className="mx-auto mt-5 w-max">
                             <Link to={`/edit-post/${post.$id}`}>
-                                <Button bgColor="bg-green-500" className="mr-3">
+                                <Button bgColor="bg-green-500 hover:bg-green-700" className="mr-3">
                                     Edit
                                 </Button>
                             </Link>
-                            <Button bgColor="bg-red-500" onClick={deletePost}>
+                            <Button bgColor="bg-red-500 hover:bg-red-700" onClick={deletePost}>
                                 Delete
                             </Button>
                         </div>

@@ -50,7 +50,7 @@ function Header() {
             <Container>
                 <nav className="flex p-2" >
                     <div className="flex justify-center items-center">
-                        <Logo className="w-10" />
+                        <Logo />
                         
                     </div>
                     <ul className="flex flex-row ml-auto gap-1.5 md:gap-10 items-center mr-5 my-2">
