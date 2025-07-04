@@ -13,12 +13,17 @@ import AllPosts, { postLoader } from "./pages/AllPosts";
 import AddPost from "./pages/AddPost";
 import EditPost from "./pages/EditPost";
 import Post from "./pages/Post";
+import OAuthHandler from "./components/OAuthHandler";
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
     children: [
+      {
+  path: "/oauth", // or "/" if that's your success URL
+  element: <OAuthHandler />
+},
       {
         path: '/',
         element: <Home />
