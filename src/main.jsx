@@ -16,6 +16,7 @@ import Post from "./pages/Post";
 import OAuthHandler from "./components/OAuthHandler";
 
 import { SpeedInsights } from "@vercel/speed-insights/react"
+import { Analytics } from "@vercel/analytics/next"
 
 const router = createBrowserRouter([
   {
