@@ -15,15 +15,17 @@ import EditPost from "./pages/EditPost";
 import Post from "./pages/Post";
 import OAuthHandler from "./components/OAuthHandler";
 
+import { SpeedInsights } from "@vercel/speed-insights/react"
+
 const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
     children: [
       {
-  path: "/oauth", // or "/" if that's your success URL
-  element: <OAuthHandler />
-},
+        path: "/oauth", // or "/" if that's your success URL
+        element: <OAuthHandler />
+      },
       {
         path: '/',
         element: <Home />
@@ -45,7 +47,7 @@ const router = createBrowserRouter([
         )
       },
       {
-        loader:postLoader,
+        loader: postLoader,
         path: '/all-posts',
         element: (
           <AuthLayout authentication>
@@ -83,6 +85,8 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
+    <SpeedInsights />
+
     <Provider store={store}>
       {/* <App /> */}
       <RouterProvider router={router} />
