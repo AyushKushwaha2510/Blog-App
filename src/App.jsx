@@ -12,7 +12,7 @@ import { useDispatch } from 'react-redux'
 import { login } from './store/authSlice'
 import ScrollToTop from './functionalities/ScrollToTop'
 
-import { Analytics } from "@vercel/analytics/next"
+// import { Analytics } from "@vercel/analytics/next"
 
 function App() {
   const [themeMode, setThemeMode] = useState("light")
@@ -50,7 +50,7 @@ function App() {
       <ThemeProvider value={{ themeMode, lightTheme, darkTheme }}>
         <Header />
         <main>
-          <Analytics/>
+          {/* <Analytics/> */}
           <Outlet />
         </main>
         <Footer />
