@@ -5,15 +5,15 @@ import LoginPage from './pages/LoginPage'
 import SignUpPage from './pages/SignUpPage'
 import { Footer, Header, PostCard } from './components'
 import { ThemeProvider } from './contexts/theme'
-import { Outlet} from 'react-router-dom'
+import { Outlet } from 'react-router-dom'
 // import service from './appwrite/config'
 import authService from './appwrite/auth'
 import { useDispatch } from 'react-redux'
 import { login } from './store/authSlice'
 import ScrollToTop from './functionalities/ScrollToTop'
 
-import usePageTracking, { initGA, trackPage } from "./analytics";
-
+// import usePageTracking, { initGA, trackPage } from "./analytics";
+import { Analytics } from '@vercel/analytics/react';
 // import { Analytics } from "@vercel/analytics/next"
 
 function App() {
@@ -46,7 +46,7 @@ function App() {
     })();
   }, []);
 
-  usePageTracking()
+
 
   return (
     <>
@@ -54,7 +54,6 @@ function App() {
       <ThemeProvider value={{ themeMode, lightTheme, darkTheme }}>
         <Header />
         <main>
-          {/* <Analytics/> */}
           <Outlet />
         </main>
         <Footer />
@@ -63,6 +62,8 @@ function App() {
         {/* <PostCard/> */}
 
       </ThemeProvider>
+      <Analytics />
+
     </>
 
   )
