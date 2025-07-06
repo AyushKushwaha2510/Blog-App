@@ -47,7 +47,7 @@ function Header() {
     return (
 
         <header className={` bg-[#efb38827] dark:bg-[#111111] dark:text-amber-50`}>
-            <Container>
+            <Container className="px-0" >
                 <nav className="flex p-2" >
                     <div className="flex justify-center items-center">
                         <Logo />
@@ -72,7 +72,7 @@ function Header() {
                                     <NavLink
                                         to={item.path}
                                         className={({ isActive }) =>
-                                            `w-15 h-8 md:w-25 md:h-10 flex items-center justify-center text-sm md:text-[14px]  shadow-sm shadow-orange-400 p-2 px-4 rounded-xl hover:cursor-pointer 
+                                            `whitespace-nowrap w-15 h-8 md:w-25 md:h-10 flex items-center justify-center text-sm md:text-[14px]  shadow-sm shadow-orange-400 p-2 px-[32.5px] rounded-xl hover:cursor-pointer 
                                             hover:scale-105 duration-500
                                             ${isActive ? "text-orange-400 font-bold font-stretch-54%" : "null"}`
                                         }
