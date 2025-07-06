@@ -23,14 +23,14 @@ export default function Post() {
             appwriteService.getPost(slug).then((post) => {
                 if (post) {
                     setPost(post);
-                    console.log("post is", (post), typeof (post));
-                    console.log("featured image", post.featuredImage, typeof (post.featuredImage));
+                    // console.log("post is", (post), typeof (post));
+                    // console.log("featured image", post.featuredImage, typeof (post.featuredImage));
 
                     const url = service.getFilePreview(post.featuredImage);
-                    console.log("URL of post ", service.getFilePreview(post.featuredImage), typeof (service.getFilePreview(post.featuredImage)));
+                    // console.log("URL of post ", service.getFilePreview(post.featuredImage), typeof (service.getFilePreview(post.featuredImage)));
 
                     setPreviewUrl(url); // ✅ trigger re-render
-                    console.log("preview url ", previewUrl, typeof (previewUrl));
+                    // console.log("preview url ", previewUrl, typeof (previewUrl));
 
                 }
                 else navigate("/");
@@ -61,7 +61,7 @@ export default function Post() {
 
 
                     <div className="w-full flex flex-col justify-center mb-4 border rounded-xl p-2">
-                        {console.log("you are in div.jsx , preview URL is ", previewUrl)}
+                        {/* {console.log("you are in div.jsx , preview URL is ", previewUrl)} */}
                         {previewUrl ? (
                             <img src={previewUrl} alt={post?.title} className="rounded-xl mx-auto lg:max-w-120" />
                         ) : (

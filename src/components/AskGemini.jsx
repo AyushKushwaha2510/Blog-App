@@ -41,8 +41,9 @@ function AskGemini() {
         value={prompt}
         onChange={(e) => setPrompt(e.target.value)}
         placeholder="Gemini is here to help you write the post... 
-        ( please give a word limit also )"
-        className="min-h-25 bg-[#f9f9fa20] w-70 py-2 px-1 border dark:border-[#e7f3ff6a] border-[#61616150] rounded-md shadow-md"
+        ( please give a word limit ) 
+            ( within 200 words )"
+        className="min-h-28 bg-[#f9f9fa20] w-70 py-2 px-1 border dark:border-[#e7f3ff6a] border-[#61616150] rounded-md shadow-md"
       />
       <Button
         onClick={handleAsk}

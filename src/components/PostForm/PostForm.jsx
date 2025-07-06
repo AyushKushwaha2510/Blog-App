@@ -194,8 +194,8 @@ export default function PostForm({ post }) {
                     userId: userData.$id,
                     authorName: userData.name,
                 });
-                console.log("authorName:", dbPost.authorName); 
-                console.log("data", dbPost);
+                // console.log("authorName:", dbPost.authorName); 
+                // console.log("data", dbPost);
 
                 if (dbPost) {
                     navigate(`/post/${dbPost.$id}`);
@@ -203,23 +203,24 @@ export default function PostForm({ post }) {
                 console.log("✅ preview URL:", appwriteService.getFilePreview(fileId));
             }
 
-            console.log("FEATURED IMAGE", data.featuredImage);
-            console.log("tyoe of FEARTURED IMAGE", typeof (data.featuredImage))
+            // console.log("FEATURED IMAGE", data.featuredImage);
+            // console.log("tyoe of FEARTURED IMAGE", typeof (data.featuredImage))
 
 
         }
     };
 
-    const slugTransform = useCallback((value) => {
-        if (value && typeof value === "string")
-            return value
-                .trim()
-                .toLowerCase()
-                .replace(/[^a-zA-Z\d\s]+/g, "-")
-                .replace(/\s/g, "-");
+const slugTransform = useCallback((value) => {
+    if (value && typeof value === "string")
+        return value
+            .trim()
+            .toLowerCase()
+            .replace(/[^a-zA-Z\d\s]+/g, "-")
+            .replace(/\s/g, "-")
+            .slice(0, 225); // ✅ Limit slug to 225 characters
 
-        return "";
-    }, []);
+    return "";
+}, []);
 
     React.useEffect(() => {
         const subscription = watch((value, { name }) => {
