@@ -1,11 +1,18 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import service from '../appwrite/config'
+import { useSelector } from 'react-redux';
 
-function PostCard({ $id, title, featuredImage }) {
+function PostCard({ $id, title, featuredImage, userId }) {
+      const userData = useSelector((state) => state.auth.userData);
+
+  const isAuthor = userData ? userData.$id === userId : false;
 
   return (
     <Link to={`/post/${$id}`}>
+      {isAuthor && (
+        <div>{userData.name}</div> 
+      )}
       <div className='w-full lg:min-w-80 lg:min-h-80 bg-gray-100 rounded-xl p-4 dark:bg-stone-800 dark:text-white '>
         <div className='w-full justify-center mb-4'>
           <img src={service.getFilePreview(featuredImage)} alt={title}

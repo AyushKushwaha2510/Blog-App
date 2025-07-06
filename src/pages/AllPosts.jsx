@@ -25,7 +25,7 @@ function AllPosts() {
                 <div className='flex flex-wrap justify-evenly'>
                     {posts.map((post) => (
                         <div key={post.$id} className='p-2 w-full sm:w-1/2 lg:w-1/4 lg:mx-20 lg:my-10' >
-                            <PostCard {...post} />
+                            <PostCard {...post} userId={post.userId}/>
                         </div>
                     ))}
                 </div>
