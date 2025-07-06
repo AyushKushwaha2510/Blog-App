@@ -168,14 +168,14 @@ export default function PostForm({ post }) {
 
             if (file) {
                 appwriteService.deleteFile(post.featuredImage);
-            
+
             }
 
             const dbPost = await appwriteService.updatePost(post.$id, {
                 ...data,
                 featuredImage: file ? file.$id : undefined,
-                
-                
+
+
             });
 
             if (dbPost) {
@@ -187,11 +187,16 @@ export default function PostForm({ post }) {
 
             if (file) {
                 const fileId = file.$id;
-                
+
                 data.featuredImage = fileId;
-                const dbPost = await appwriteService.createPost({ ...data, userId: userData.$id });
+                const dbPost = await appwriteService.createPost({
+                    ...data,
+                    userId: userData.$id,
+                    authorName: userData.name,
+                });
+                console.log("authorName:", dbPost.authorName); 
                 console.log("data", dbPost);
-                
+
                 if (dbPost) {
                     navigate(`/post/${dbPost.$id}`);
                 }
@@ -199,7 +204,7 @@ export default function PostForm({ post }) {
             }
 
             console.log("FEATURED IMAGE", data.featuredImage);
-            console.log("tyoe of FEARTURED IMAGE", typeof(data.featuredImage))
+            console.log("tyoe of FEARTURED IMAGE", typeof (data.featuredImage))
 
 
         }
