@@ -35,7 +35,7 @@ function Header() {
         {
             name: "All Posts",
             path: '/all-posts',
-            active: authStatus,
+            active: !authStatus,
         },
         {
             name: "Add Post",
