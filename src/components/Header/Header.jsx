@@ -53,7 +53,7 @@ function Header() {
                         <Logo />
                         
                     </div>
-                    <ul className="flex flex-row ml-auto gap-1.5 md:gap-10 items-center mr-5 my-2">
+                    <ul className="flex flex-row ml-auto gap-1.5 md:gap-10 items-center md:mr-5 my-2 overflow-x: auto mr-2">
                         {
                             // navItems.map((item) => item.active ? (
                             //     <li key={item.name}>
@@ -72,7 +72,7 @@ function Header() {
                                     <NavLink
                                         to={item.path}
                                         className={({ isActive }) =>
-                                            `whitespace-nowrap w-15 h-8 md:w-25 md:h-10 flex items-center justify-center text-[13px] md:text-[14px]  shadow-sm shadow-orange-400 p-2 px-[30px] rounded-xl hover:cursor-pointer 
+                                            `whitespace-nowrap w-15 h-8 md:w-25 md:h-10 flex items-center justify-center text-sm md:text-[14px]  shadow-sm shadow-orange-400 p-2 px-[30px] rounded-xl hover:cursor-pointer 
                                             hover:scale-105 duration-500
                                             ${isActive ? "text-orange-400 font-bold font-stretch-54%" : "null"}`
                                         }
