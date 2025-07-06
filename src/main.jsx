@@ -15,8 +15,6 @@ import EditPost from "./pages/EditPost";
 import Post from "./pages/Post";
 import OAuthHandler from "./components/OAuthHandler";
 
-import { SpeedInsights } from "@vercel/speed-insights/react"
-import { Analytics } from "@vercel/analytics/next"
 
 const router = createBrowserRouter([
   {
@@ -86,9 +84,6 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <SpeedInsights />
-    <Analytics/>
-
     <Provider store={store}>
       {/* <App /> */}
       <RouterProvider router={router} />
