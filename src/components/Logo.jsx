@@ -4,7 +4,7 @@ function Logo({className}){
 
     return (
         <div className={className} >
-            <img src="/favicon.png" alt="LOGO" className="w-10"/>
+            <img src="/favicon.png" alt="LOGO" className="w-10 h-10"/>
         </div>
     )
 }
