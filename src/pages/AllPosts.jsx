@@ -21,7 +21,7 @@ function AllPosts() {
 
     return (
         <div className=' py-8 px-3 flex justify-center dark:bg-[#212121] '>
-            <Container className="dark:bg-[#313131] shadow-sm  shadow-orange-400 ">
+            <Container className="dark:bg-[#313131] shadow-sm  shadow-orange-400 py-4">
                 <div className='flex flex-wrap justify-evenly'>
                     {posts.map((post) => (
                         <div key={post.$id} className='p-2 w-full sm:w-1/2 lg:w-1/4 lg:mx-20 lg:my-10' >
