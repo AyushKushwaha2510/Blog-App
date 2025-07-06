@@ -50,7 +50,7 @@ function Header() {
             <Container className="px-0" >
                 <nav className="flex p-2" >
                     <div className="flex justify-center items-center">
-                        <Logo />
+                        <Logo className="ml-[-10px] md:mx-0" />
                         
                     </div>
                     <ul className="flex flex-row ml-auto gap-1.5 md:gap-10 items-center md:mr-5 my-2 overflow-x: auto mr-2">
@@ -100,7 +100,7 @@ function Header() {
                         
                         
                     </ul>
-                    <ThemeBtn />
+                    <ThemeBtn className="mr-[-10px] md:mr-0"  />
                 </nav>
             </Container>
         </header>

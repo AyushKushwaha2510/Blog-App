@@ -47,7 +47,7 @@
 import { useState, useEffect } from "react";
 import { FaSun, FaMoon } from "react-icons/fa";
 
-const ThemeToggle = () => {
+const ThemeToggle = ({className}) => {
     const [theme, setTheme] = useState("light");
 
     useEffect(() => {
@@ -59,7 +59,7 @@ const ThemeToggle = () => {
     };
 
     return (
-        <label className="relative inline-flex items-center cursor-pointer">
+        <label className={`relative inline-flex items-center cursor-pointer ${className}`} >
             <input
                 type="checkbox"
                 className="sr-only peer"
