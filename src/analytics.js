@@ -1,9 +1,16 @@
-import ReactGA from "react-ga4";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
-export const initGA = () => {
-  ReactGA.initialize("G-12DKHLMRQC"); // your GA4 Measurement ID
+const usePageTracking = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (window.gtag) {
+      window.gtag("config", "G-12DKHLMRQC", {
+        page_path: location.pathname + location.search,
+      });
+    }
+  }, [location]);
 };
 
-export const trackPage = (url) => {
-  ReactGA.send({ hitType: "pageview", page: url });
-};
+export default usePageTracking;

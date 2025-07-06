@@ -5,14 +5,14 @@ import LoginPage from './pages/LoginPage'
 import SignUpPage from './pages/SignUpPage'
 import { Footer, Header, PostCard } from './components'
 import { ThemeProvider } from './contexts/theme'
-import { Outlet, useLocation } from 'react-router-dom'
+import { Outlet} from 'react-router-dom'
 // import service from './appwrite/config'
 import authService from './appwrite/auth'
 import { useDispatch } from 'react-redux'
 import { login } from './store/authSlice'
 import ScrollToTop from './functionalities/ScrollToTop'
 
-import { initGA, trackPage } from "./analytics";
+import usePageTracking, { initGA, trackPage } from "./analytics";
 
 // import { Analytics } from "@vercel/analytics/next"
 
@@ -46,17 +46,7 @@ function App() {
     })();
   }, []);
 
-
-
-  const location = useLocation();
-
-  useEffect(() => {
-    initGA(); // initialize GA only once
-  }, []);
-
-  useEffect(() => {
-    trackPage(location.pathname + location.search);
-  }, [location]);
+  usePageTracking()
 
   return (
     <>
