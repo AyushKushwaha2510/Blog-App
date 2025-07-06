@@ -16,7 +16,7 @@ function PostCard({ $id, title, featuredImage, authorName }) {
           className='text-xl font-bold mb-5'
         >{title}</h2>
         <span className='text-[16px] mt-5'>Click to Read</span>
-        <p className="text-sm text-gray-500 mt-1">Post By - {authorName}</p>
+        <p className="text-sm text-gray-500 dark:text-gray-200 mt-1">Post By - {authorName}</p>
       </div>
 
     </Link>

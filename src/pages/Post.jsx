@@ -81,7 +81,7 @@ export default function Post() {
                     <div className="browser-css">
                         {parse(post.content)}
                     </div>
-                    <p className="text-sm text-gray-800 font-semibold my-5 mt-10 lg:m-0">Post By - {post.authorName || "Unknown Author"}</p>
+                    <p className="text-sm text-gray-800 dark:text-gray-300 font-semibold my-5 mt-10 lg:m-0">Post By - {post.authorName || "Unknown Author"}</p>
 
                     <div>
                         {isAuthor && (
