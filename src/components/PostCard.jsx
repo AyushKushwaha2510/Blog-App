@@ -4,9 +4,9 @@ import service from '../appwrite/config'
 import { useSelector } from 'react-redux';
 
 function PostCard({ $id, title, featuredImage, userId }) {
-  const userData = useSelector((state) => state.auth.userData);
+  // const userData = useSelector((state) => state.auth.userData);
 
-  const isAuthor = userData ? userData.$id === userId : false;
+  // const isAuthor = userData ? userData.$id === userId : false;
 
   return (
     <Link to={`/post/${$id}`}>
@@ -21,9 +21,9 @@ function PostCard({ $id, title, featuredImage, userId }) {
           className='text-xl font-bold mb-5'
         >{title}</h2>
         <span className='text-[16px] mt-5'>Click to Read</span>
-        {isAuthor && (
+        {/* {isAuthor && (
           <div>{userData.name}</div>
-        )}
+        )} */}
       </div>
 
     </Link>
