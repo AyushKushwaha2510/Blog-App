@@ -117,8 +117,10 @@ function LogIn() {
             const session = await service.login(data)
             if (session) {
                 const userData = await service.getCurrentUser()
-                if (userData) dispatch(authLogin({ userData }));
-                navigate("/all-posts")
+                if (userData) {
+                    dispatch(authLogin({ userData }));
+                    navigate("/all-posts")
+                }
             }
         } catch (error) {
             setError(error.message)
@@ -134,7 +136,7 @@ function LogIn() {
                 <h2>Sign in to your account</h2>
                 <p>
                     Don&apos;t have any account?&nbsp;
-                    <Link to="/signup" className= "text-orange-700 dark:text-orange-400">
+                    <Link to="/signup" className="text-orange-700 dark:text-orange-400">
                         Sign Up
                     </Link>
                 </p>

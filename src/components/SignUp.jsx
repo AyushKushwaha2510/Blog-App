@@ -16,19 +16,40 @@ function SignUp() {
     const dispatch = useDispatch()
     const { register, handleSubmit } = useForm()
 
+    // const create = async (data) => {
+    //     setError("")
+    //     try {
+    //         const userData = await authService.createAccount(data)
+    //         if (userData) {
+    //             const userData = await authService.getCurrentUser()
+    //             if (userData) {
+    //                 dispatch(login(userData));
+    //                 navigate("/all-posts")
+    //             }
+    //         }
+    //     } catch (error) {
+    //         setError(error.message)
+    //     }
+    // }
+
+    // debuged (userdata was undefined after signin but defined after login)
     const create = async (data) => {
-        setError("")
-        try {
-            const userData = await authService.createAccount(data)
-            if (userData) {
-                const userData = await authService.getCurrentUser()
-                if (userData) dispatch(login(userData));
-                navigate("/all-posts")
+    setError("");
+    try {
+        const accountResponse = await authService.createAccount(data); // <- renamed
+
+        if (accountResponse) {
+            const user = await authService.getCurrentUser(); // <- clearer name
+            if (user) {
+                dispatch(login({ userData: user })); // <- match your slice shape
+                navigate("/all-posts");
             }
-        } catch (error) {
-            setError(error.message)
         }
+    } catch (error) {
+        setError(error.message);
     }
+};
+
     return (
         <div className="text-black dark:text-white w-max mx-auto h-max p-10 gap-5 justify-center flex flex-col rounded-2xl border-[0.5px] border-[#e7f3ff6a]  bg-[rgba(255,255,255,0.07)] shadow-[2px_4px_4px_5px_rgba(0,0,0,0.25)] backdrop-blur-[23.6px]">
             <div className="flex flex-col text-center gap-1">
